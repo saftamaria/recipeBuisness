@@ -1,0 +1,77 @@
+Example:
+
+Example for UnitOfMeasure model class:
+
+STEP 1:
+Create new package in project with commands classes (Data Transfer Objects)
+Create class:
+
+public class UnitOfMeasureCommand {
+    private Long id;
+    private String description;
+
+//generate getters and setters
+}
+
+STEP 2:
+
+Creata new package with converters
+	- from command classes to model classes
+	- from model classes to command classes
+
+@Component
+public class UnitOfMeasureCommandToUnitOfMeasure implements Converter<UnitOfMeasureCommand, UnitOfMeasure> {
+
+    @Synchronized
+    @Nullable
+    @Override
+    public UnitOfMeasure convert(UnitOfMeasureCommand source) {
+        if (source == null) {
+            return null;
+        }
+
+        final UnitOfMeasure uom = new UnitOfMeasure();
+        uom.setId(source.getId());
+        uom.setDescription(source.getDescription());
+        return uom;
+    }
+}
+
+
+@Component
+public class UnitOfMeasureToUnitOfMeasureCommand implements Converter<UnitOfMeasure, UnitOfMeasureCommand> {
+
+    @Synchronized
+    @Nullable
+    @Override
+    public UnitOfMeasureCommand convert(UnitOfMeasure unitOfMeasure) {
+
+        if (unitOfMeasure != null) {
+            final UnitOfMeasureCommand uomc = new UnitOfMeasureCommand();
+            uomc.setId(unitOfMeasure.getId());
+            uomc.setDescription(unitOfMeasure.getDescription());
+            return uomc;
+        }
+        return null;
+    }
+}
+
+Team 1 - Notes and Category
+Team 2 - Ingredient
+Team 3 - Recipe
+
+Team 1
+	Alexandru-Milin
+	Vasile-Eugen
+	Ovidiu Flaviu
+
+Team 2
+	Damian Laurentiu
+	Iuliu-Tudor
+	Timeea Vas
+
+Team 3
+	Bogdan-Ionut
+	Ioan-Emil
+	Maria-Antoneta
+	Babutia Andrian

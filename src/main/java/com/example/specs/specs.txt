@@ -1,0 +1,32 @@
+Recipe book application
+- Category
+    - description
+- Difficulty
+    - enum type
+- Ingredient
+    - description
+    - amount
+    - uom
+    - recipe
+- Notes
+    - recipe
+    - recipeNotes
+- Recipe
+    - description
+    - preparation time
+    - cooking time
+    - servings
+    - source
+    - url
+    - directions
+    - ingredients
+    - image
+    - difficulty
+    - notes
+    - categories
+- UnitOfMeasure
+    - description
+* Category to * Recipe
+1 Ingredient to 1 Unit of measure
+* Ingrediets to 1 Recipe
+1 Notes to 1 Recipe
